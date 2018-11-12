@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Thomas Goldring's website">
+  <meta name="author" content="Thomas Goldring">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> {{ .Title }} : tgoldring.com </title>
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <nav class="navbar" id="myNavbar">
+      <a href="{{ .Site.BaseURL }}">Thomas Goldring</a></li>
+      <a href="/research/">Research</a></li>
+      <a href="/projects/">Projects</a></li>
+      <a href="/code/">Code</a></li>
+      <a href="/resume/">Resume</a></li>
+      <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </nav>
+  </header>
+  <script>
+    function navFunction() {
+      var x = document.getElementById("myNavbar");
+      if (x.className === "navbar") {
+        x.className += " responsive";
+      } else {
+        x.className = "navbar";
+      }
+    }
+  </script>
+  
+  {{ block "main" . }}
+  {{ end }}
+
+  <footer>
+    <div class="row-footer">
+      <div class="footer-left">
+        <img src="/images/headshot.png" class="headshot">
+        I am a Postdoctoral Fellow at the <a href="https://umich.edu/">University of Michigan</a> (<a href="http://fordschool.umich.edu/">Ford School</a>), where I'm affiliated with the <a href="http://www.edpolicy.umich.edu/">Education Policy Initiative</a>.
+      </div>
+      <div class="footer-right">
+        <ul class="fa-ul">
+          <li><span class="fa-li fas fa-envelope"></span><a href="mailto:thgold@umich.edu">thgold@umich.edu</a></li>
+          <li><span class="fa-li fab fa-twitter"></span>@<a href="https://twitter.com/thomasgoldring">thomasgoldring</a></li>
+          <li><span class="fa-li fab fa-github"></span><a href="https://github.com/tgoldring">Github</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

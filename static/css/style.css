@@ -1,0 +1,156 @@
+a {
+  text-decoration: none;
+  transition: all 0.2s linear;
+  color: black;
+  border-bottom: 1px dotted black;
+}
+
+a:hover {
+  color: #800000;
+  border-bottom: 1px solid #800000;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+}
+
+header {
+  background-color: #800000;
+  overflow: hidden;
+}
+
+main {
+  margin: 40px 20%;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+img {
+  float: left;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 35px 0 0 0;
+}
+
+.navbar {
+  margin: 0 20%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  color: #DCDCDC;
+}
+
+.navbar .icon {
+  display: none;
+}
+
+.col-home {
+  padding-right: 2%;
+  float: left;
+  width: 48%;
+}
+
+.row-home:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer {
+  border-top: 3px solid #800000;
+  color: black;
+  text-align: left;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.row-footer {
+  margin: 25px 20%;
+}
+
+.row-footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer-left {
+  float: left;
+  width: 65%;
+  padding-right: 5%;
+}
+
+.footer-right {
+  float: right;
+  width: 30%;
+}
+
+img.headshot {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.fa-ul {
+  margin: 0;
+  padding: 0;
+}
+
+.abstract {
+  margin: 20px 0;
+}
+
+.resume-year {
+  float: left;
+  width: 80px;
+}
+
+.resume-item {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar a:not(:first-child) {display: none;}
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+  .navbar.responsive {position: relative;}
+  .navbar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .col-home {
+    width: 100%;
+  }
+  .footer-left {
+    width: 100%;
+  }
+  .footer-right {
+    width: 100%;
+  }
+}

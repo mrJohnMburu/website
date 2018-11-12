@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <main>
+    <div class="row-home">
+      <div class="col-home">
+        <h1>Research</h1>
+          {{ range first 2 (where .Pages "Section" "research").ByDate.Reverse }}
+            <p>{{ .Params.title }}<br>
+              <a href="{{ .Permalink }}">Abstract</a> | <a href="/papers/{{ .Params.filename }}.pdf">PDF</a></p>
+          {{ end }}
+      </div>
+      <div class="col-home">
+        <h1>Projects</h1>
+          {{ range first 2 (where .Pages "Section" "projects").ByDate.Reverse }}
+            <p>{{ .Params.title }}</p>
+          {{ end }}
+        <h1>Code</h1>
+          {{ range first 2 (where .Pages "Section" "code").ByDate.Reverse }}
+            <p>{{ .Params.title }}</p>
+          {{ end }}
+      </div>
+    </div>
+  </main>
+{{ end }}

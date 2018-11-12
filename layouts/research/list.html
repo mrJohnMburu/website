@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+<main>
+  <h2>Working Papers</h2>
+  {{ range where .Pages ".Params.working" "yes" }}
+    <p>
+      {{ .Params.title }}<br>
+      {{ with .Params.coauthors }}
+        (with {{ . }})<br>
+      {{ end }}
+      {{ .Date.Format "January 2006" }}<br>
+      <a href="{{ .Permalink }}">Abstract</a> | <a href="/papers/{{ .Params.filename }}.pdf">PDF</a>
+    </p>
+  {{ end }}
+  <h2>Published</h2>
+  {{ range where .Pages ".Params.working" "no" }}
+    <p>
+      {{ .Params.title }}<br>
+      {{ with .Params.coauthors }}
+        (with {{ . }})<br>
+      {{ end }}
+      {{ .Params.journal }}, {{ .Date.Format "January 2006" }}<br>
+      <a href="{{ .Permalink }}">Abstract</a> | <a href="/papers/{{ .Params.filename }}.pdf">PDF</a>
+    </p>
+  {{ end }}
+</main>
+
+{{ end }}

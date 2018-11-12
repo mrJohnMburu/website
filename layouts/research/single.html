@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<main>
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.coauthors }}
+    (with {{ . }})<br>
+  {{ end }}
+  {{ with .Params.journal }}
+  	{{ . }}, 
+  {{ end }}
+  {{ with .Params.volume }}
+    Vol. {{ . }}, 
+  {{ end }}
+  {{ with .Params.pages }}
+    {{ . }}<br>
+  {{ end }}
+  {{ with .Params.doi }}
+    <a href="{{ . }}">Publisher</a> | 
+  {{ end }}
+  <a href="/papers/{{ .Params.filename }}.pdf">PDF</a>
+  <div class="abstract">{{ .Params.abstract }}</div>
+</main>
+
+{{ end }}
