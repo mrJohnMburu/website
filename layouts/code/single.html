@@ -21,11 +21,11 @@
     </code></pre>
   For comparison, estimate a two-way fixed effects DD model of female suicide on no-fault divorce reforms:
     <pre><code class="stata">
-      areg asmrs post i.year, a(state) robust
+      areg asmrs treat i.year, a(state) robust
     </code></pre>
   Apply the DD decomposition theorem in Goodman-Bacon (2018) to the two-way fixed effects DD model:
     <pre><code class="stata">
-      ddtiming asmrs post, i(state) t(year)
+      ddtiming asmrs treat, i(state) t(year)
     </code></pre>
   You should see the following output and scatterplot:
   </p>
@@ -33,7 +33,7 @@
   <p><img src="/images/ddtiming_graph1.png" class="code" width="600"></p>
   The scatterplot replicates Figure 6 in Goodman-Bacon (2018). Additionally, we can add options to the command to modify the look of the scatterplot:
     <pre><code class="stata">
-      ddtiming asmrs post, i(state) t(year) ddline(lwidth(thick)) ylabel(-30(10)30) legend(order(3 4 1 2)) savegraph(nfd.jpg) savedata(nfd) replace
+      ddtiming asmrs treat, i(state) t(year) ddline(lwidth(thick)) ylabel(-30(10)30) legend(order(3 4 1 2)) savegraph(nfd.jpg) savedata(nfd) replace
     </code></pre>
   This command demonstrates the use of <code>ddtiming</code>'s options (<code>ddline, savegraph, savedata</code>) and twoway options (<code>ylabel, legend</code>). For descriptions of all options and additional help, type
     <pre><code class="stata">
