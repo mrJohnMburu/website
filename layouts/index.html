@@ -14,9 +14,7 @@
             <p>{{ .Params.title }}</p>
           {{ end }}
         <h1>Code</h1>
-          {{ range first 2 (where .Pages "Section" "code").ByDate.Reverse }}
-            <p>{{ .Params.title }}</p>
-          {{ end }}
+          <a href="{{ .Site.BaseURL }}code"><code>ddtiming</code></a> is a Stata command that implements a decomposition of a difference-in-differences (DD) estimator with variation in treatment timing, based on <a href="https://s3.amazonaws.com/vu-my/wp-content/uploads/sites/2318/2018/09/10091642/ddtiming_9_5_2018.pdf">Goodman-Bacon (2018)</a>.
       </div>
     </div>
   </main>
