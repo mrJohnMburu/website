@@ -34,7 +34,8 @@
   <p>The scatterplot replicates Figure 6 in Goodman-Bacon (2018). Additionally, we can add options to the command to modify the look of the scatterplot:
     <pre><code class="stata">
       ddtiming asmrs treat, i(state) t(year) ddline(lwidth(thick)) ///
-        ylabel(-30(10)30) legend(order(3 4 1 2)) savegraph(nfd.jpg) savedata(nfd) replace
+        ylabel(-30(10)30) legend(order(3 4 1 2)) savegraph(nfd.jpg) ///
+        savedata(nfd) replace
     </code></pre>
   This command demonstrates the use of <code>ddtiming</code>'s options (<code>ddline</code>, <code>savegraph</code>, <code>savedata</code>) and twoway options (<code>ylabel</code>, <code>legend</code>). For descriptions of all options and additional help, type
     <pre><code class="stata">
