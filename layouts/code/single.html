@@ -14,7 +14,7 @@
       net install ddtiming, from(https://tgoldring.com/code/)
     </code></pre>
   </p>
-  <p>Let's see <code>ddtiming.ado</code> in action using the same example as in Goodman-Bacon (2018). Download and load a dataset with the timing of no-fault divorce laws and female suicide rates by typing
+  <p>Let's see <code>ddtiming</code> in action using the same example as in Goodman-Bacon (2018). Download and load a dataset with the timing of no-fault divorce laws and female suicide rates (Stevenson & Wolfers, 2018) by typing
     <pre><code class="stata">
       net get ddtiming
       use nfd.dta
@@ -31,16 +31,19 @@
   </p>
   <p><img src="/images/ddtiming_output.PNG" class="code" width="400"></p>
   <p><img src="/images/ddtiming_graph1.png" class="code" width="600"></p>
-  The scatterplot replicates Figure 6 in Goodman-Bacon (2018). Additionally, we can add options to the command to modify the look of the scatterplot:
+  <p>The scatterplot replicates Figure 6 in Goodman-Bacon (2018). Additionally, we can add options to the command to modify the look of the scatterplot:
     <pre><code class="stata">
       ddtiming asmrs treat, i(state) t(year) ddline(lwidth(thick)) ylabel(-30(10)30) legend(order(3 4 1 2)) savegraph(nfd.jpg) savedata(nfd) replace
     </code></pre>
-  This command demonstrates the use of <code>ddtiming</code>'s options (<code>ddline, savegraph, savedata</code>) and twoway options (<code>ylabel, legend</code>). For descriptions of all options and additional help, type
+  This command demonstrates the use of <code>ddtiming</code>'s options (<code>ddline</code>, <code>savegraph</code>, <code>savedata</code>) and twoway options (<code>ylabel</code>, <code>legend</code>). For descriptions of all options and additional help, type
     <pre><code class="stata">
       help ddtiming
     </code></pre>
   </p>
-
+  <h1>References</h1>
+  <p>Goodman-Bacon, Andrew. 2018. "<a href="https://s3.amazonaws.com/vu-my/wp-content/uploads/sites/2318/2018/09/10091642/ddtiming_9_5_2018.pdf">Difference-in-differences with variation in treatment timing</a>". Working paper.</p>
+  <p>Stevenson, Betsey and Justin Wolfers. 2006. "<a href="https://doi.org/10.1093/qje/121.1.267">Bargaining in the Shadow of the Law: Divorce Laws and Family Distress</a>". <i>The Quarterly Journal of Economics</i> 121(1): 267-288.</p>
+  
 </main>
 
 {{ end }}
