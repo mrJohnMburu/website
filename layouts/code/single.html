@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+<main>
+  <h1>ddtiming</h1>
+  <p>ddtiming is a Stata command that implements a decomposition of a difference-in-differences (DD) estimator with variation in treatment timing, based on Goodman-Bacon (2018). The two-way fixed effects DD model is a weighted average of all possible two-group/two period DD estimators. The command generates a scatterplot of 2x2 DD estimates and their associated weights.</p>
+
+  <p>To install the command, either type
+    <pre><code>
+      net describe ddtiming, from(https://tgoldring.com/code/)
+      net install ddtiming
+    </code></pre>
+  or alternatively type
+    <pre><code class="stata">
+      net install ddtiming, from(https://tgoldring.com/code/)
+    </code></pre>
+  </p>
+  <p>Let's see ddtiming.ado in action using the same example as in Goodman-Bacon (2018). Download and load a dataset with the timing of no-fault divorce laws and female suicide rates by typing
+    <pre><code class="stata">
+      net get ddtiming
+      use nfd.dta
+    </code></pre>
+  For comparison, estimate a two-way fixed effects DD model of female suicide on no-fault divorce reforms:
+    <pre><code class="stata">
+      areg asmrs post i.year, a(state) robust
+    </code></pre>
+  Apply the DD decomposition theorem in Goodman-Bacon (2018) to the two-way fixed effects DD model:
+    <pre><code class="stata">
+      ddtiming asmrs post, i(state) t(year)
+    </code></pre>
+  You should see the following output and scatterplot:
+  </p>
+  <p><img src="/images/ddtiming_output.PNG" class="code" width="400"></p>
+  <p><img src="/images/ddtiming_graph1.png" class="code" width="600"></p>
+  The scatterplot replicates Figure 6 in Goodman-Bacon (2018). Additionally, we can add options to the command to modify the look of the scatterplot:
+    <pre><code class="stata">
+      ddtiming asmrs post, i(state) t(year) ddline(lwidth(thick)) ylabel(-30(10)30) legend(order(3 4 1 2)) savegraph(nfd.jpg) savedata(nfd) replace
+    </code></pre>
+  This command demonstrates the use of ddtiming's options (ddline, savegraph, savedata) and twoway options (ylabel, legend). For descriptions of all options and additional help, type
+    <pre><code class="stata">
+      help ddtiming
+    </code></pre>
+  </p>
+
+</main>
+
+{{ end }}
