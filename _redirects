@@ -1,0 +1,5 @@
+# Redirect domain aliases to primary domain
+https://www.thomasgoldring.com/* https://tgoldring.com/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://thomasgoldring.netlify.com/* https://tgoldring.com/:splat 301!
