@@ -9,7 +9,7 @@ human-readable summary can be accessed at http://creativecommons.org/publicdomai
 */
 
 program define ddtiming, eclass sortpreserve
-  version 15.1
+  version 13
   
   syntax varlist(min=2 max=2 numeric) [if], [i(varname numeric) ///
     t(varname numeric) Msymbols(string) MColors(string) MSIZes(string) ///
