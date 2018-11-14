@@ -128,7 +128,7 @@ loads the scatterpoint data, labels the variables, and plots the graph.
 
 {pstd}Load data that replicates Stevenson and Wolfers' (2006) analysis of 
 no-fault divorce reforms and female suicide.{p_end}
-{phang2}. {stata use ntd.dta}{p_end}
+{phang2}. {stata use nofault_divorce.dta}{p_end}
 
 {pstd}Estimate a two-way fixed effect DD model of female suicide on no-fault 
 divorce reforms.{p_end}
