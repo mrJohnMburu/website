@@ -159,4 +159,7 @@ img.code {
   main {
     margin: 40px 20%;
   }
+  .row-footer {
+    margin: 25px 0%;
+  }
 }
