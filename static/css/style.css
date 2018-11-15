@@ -156,4 +156,7 @@ img.code {
   .footer-right {
     width: 100%;
   }
+  main {
+    margin: 40px 20%;
+  }
 }
