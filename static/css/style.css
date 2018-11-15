@@ -70,6 +70,8 @@ h2 {
   clear: both;
 }
 
+/* FOOTER */
+
 footer {
   border-top: 3px solid #800000;
   color: black;
@@ -78,25 +80,15 @@ footer {
   font-size: 15px;
 }
 
-.row-footer {
+.footer-flex {
   margin: 25px 25%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
-.row-footer:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.footer-left {
-  float: left;
-  width: 65%;
-  padding-right: 5%;
-}
-
-.footer-right {
-  float: right;
-  width: 30%;
+.footer-bio {
+  margin: 0 0 10px 0;
 }
 
 img.headshot {
@@ -111,6 +103,8 @@ img.headshot {
   padding: 0;
 }
 
+/* RESEARCH PAGE */
+
 .abstract {
   margin: 20px 0;
 }
@@ -118,14 +112,13 @@ img.headshot {
 /* RESUME PAGE */
 .resume-flex-container {
   display: flex;
-  flex-direction: row
+  flex-direction: row;
   align-items: flex-start;
 }
 
 .resume-flex-item {
   flex: 0 0 80px;
 }
-
 
 .resume-year {
   float: left;
@@ -171,7 +164,11 @@ img.code {
   main {
     margin: 40px 3%;
   }
-  .row-footer {
+  .footer-flex {
     margin: 25px 3%;
+    flex-direction: column;
+  }
+  .footer-pic {
+    display: none;
   }
 }
