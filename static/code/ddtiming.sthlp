@@ -132,14 +132,14 @@ no-fault divorce reforms and female suicide.{p_end}
 
 {pstd}Estimate a two-way fixed effect DD model of female suicide on no-fault 
 divorce reforms.{p_end}
-{phang2}. {stata areg asmrs post i.year, a(state) robust}{p_end}
+{phang2}. {stata areg asmrs treat i.year, a(state) robust}{p_end}
 
 {pstd}Apply the DD decomposition theorem in Goodman-Bacon (2018) to the two-way
 fixed effects DD model.{p_end}
-{phang2}. {stata ddtiming asmrs post, i(state) t(year)}{p_end}
+{phang2}. {stata ddtiming asmrs treat, i(state) t(year)}{p_end}
 
 {pstd}Adjust graph options.{p_end}
-{phang2}. {stata ddtiming asmrs post, i(state) t(year), ddline(width(thick)) legend(order(3 4 1 2)) ylabel(-30(10)30)}{p_end}
+{phang2}. {stata ddtiming asmrs treat, i(state) t(year) ddline(lwidth(thick)) legend(order(3 4 1 2)) ylabel(-30(10)30)}{p_end}
 
 
 {marker saved_results}{...}
